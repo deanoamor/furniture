@@ -18,6 +18,12 @@ jobs:
 
       - run: npm ci
 
+      - uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: nextjs-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
+          restore-keys: nextjs-${{ hashFiles('package-lock.json') }}-
+
       - name: Type check
         run: npm run lint
 
@@ -26,9 +32,3 @@ jobs:
         env:
           NEXT_PUBLIC_SITE_URL: https://www.ciptakreasindo.com
           NEXT_TELEMETRY_DISABLED: 1
-
-      - uses: actions/cache@v4
-        with:
-          path: .next/cache
-          key: nextjs-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
-          restore-keys: nextjs-${{ hashFiles('package-lock.json') }}-
