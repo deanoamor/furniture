@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 import Reveal from "./Reveal";
 import { works } from "@/lib/site";
 
@@ -18,7 +19,7 @@ export default function Work() {
             <Reveal as="li" key={w.caption} delay={i * 0.1}>
               <figure className="work">
                 <div className="work__media">
-                  <Image src={`/images/${w.image}`} alt={w.alt} fill sizes="(max-width: 640px) 76vw, 33vw" />
+                  <Image src={asset(`/images/${w.image}`)} alt={w.alt} fill sizes="(max-width: 640px) 76vw, 33vw" />
                 </div>
                 <figcaption>{w.caption}</figcaption>
               </figure>

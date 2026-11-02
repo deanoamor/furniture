@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 import Reveal from "./Reveal";
 import { products, waLink, WA_CUSTOM } from "@/lib/site";
 
@@ -21,7 +22,7 @@ export default function Products() {
               <article>
                 <a className="card" href={p.href}>
                   <div className={`card__media${p.fit === "cover" ? " card__media--cover" : ""}`}>
-                    <Image src={`/images/${p.image}`} alt={p.alt} fill sizes="(max-width: 640px) 120px, (max-width: 1024px) 33vw, 25vw" />
+                    <Image src={asset(`/images/${p.image}`)} alt={p.alt} fill sizes="(max-width: 640px) 120px, (max-width: 1024px) 33vw, 25vw" />
                   </div>
                   <div className="card__body">
                     <h3 className="card__title">{p.name}</h3>

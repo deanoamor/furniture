@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 import { WhatsAppIcon } from "./Icons";
 import { waLink, WA_QUOTE } from "@/lib/site";
 
@@ -29,13 +30,13 @@ export default function Hero() {
 
         <div className="bento rise" style={{ "--d": ".2s" } as React.CSSProperties}>
           <figure className="bento__cell bento__cell--tall">
-            <Image src="/images/hero-trolley.jpg" alt="Trolley hotel stainless" fill priority sizes="(max-width: 860px) 40vw, 28vw" />
+            <Image src={asset("/images/hero-trolley.jpg")} alt="Trolley hotel stainless" fill priority sizes="(max-width: 860px) 40vw, 28vw" />
           </figure>
           <figure className="bento__cell bento__cell--photo">
-            <Image src="/images/hero-workshop.jpg" alt="Standing ashtray stainless hasil produksi workshop" fill priority sizes="(max-width: 860px) 30vw, 24vw" />
+            <Image src={asset("/images/hero-workshop.jpg")} alt="Standing ashtray stainless hasil produksi workshop" fill priority sizes="(max-width: 860px) 30vw, 24vw" />
           </figure>
           <figure className="bento__cell">
-            <Image src="/images/hero-ashtray.jpg" alt="Standing ashtray stainless" fill sizes="(max-width: 860px) 30vw, 24vw" />
+            <Image src={asset("/images/hero-ashtray.jpg")} alt="Standing ashtray stainless" fill sizes="(max-width: 860px) 30vw, 24vw" />
           </figure>
         </div>
       </div>
